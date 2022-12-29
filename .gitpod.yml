@@ -6,14 +6,8 @@ tasks:
     init: |
       dotnet dev-certs https 
       dotnet tool restore
-      dotnet build
   - name: Run
     command: dotnet run
-
-ports:
-  - name: Web app
-    port: 8080
-    onOpen: open-browser
 
 vscode:
   extensions:
