@@ -1,0 +1,21 @@
+image:
+  file: .gitpod/Dockerfile
+
+tasks:
+  - name: Restore and build
+    init: |
+      dotnet dev-certs https 
+      dotnet tool restore
+      dotnet build
+  - name: Run
+    command: dotnet run
+
+ports:
+  - name: Web app
+    port: 8080
+    onOpen: open-browser
+
+vscode:
+  extensions:
+    - Ionide.Ionide-fsharp
+    - muhammad-sammy.csharp
